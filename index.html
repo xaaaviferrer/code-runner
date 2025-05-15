@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Editor HTML/CSS/JS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Editor HTML + CSS + JavaScript</h1>
+  </header>
+
+  <div class="editor">
+    <div class="editor-section">
+      <label for="htmlEditor">HTML</label>
+      <textarea id="htmlEditor"></textarea>
+    </div>
+    <div class="editor-section">
+      <label for="cssEditor">CSS</label>
+      <textarea id="cssEditor"></textarea>
+    </div>
+    <div class="editor-section">
+      <label for="jsEditor">JavaScript</label>
+      <textarea id="jsEditor"></textarea>
+    </div>
+  </div>
+
+  <div class="output">
+    <button id="runBtn">Executar Codi</button>
+    <iframe id="output"></iframe>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
