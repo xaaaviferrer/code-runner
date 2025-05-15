@@ -3,29 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>Editor HTML/CSS/JS</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
 </head>
 <body>
   <header>
     <h1>Editor HTML + CSS + JavaScript</h1>
   </header>
 
+  <!-- Botones para cambiar de lenguaje -->
+  <div class="language-buttons">
+    <button data-lang="html">HTML</button>
+    <button data-lang="css">CSS</button>
+    <button data-lang="js">JavaScript</button>
+  </div>
+
+  <!-- Contenedor del editor -->
   <div class="editor">
-    <div class="editor-section">
+    <div class="editor-section" id="htmlEditorSection">
       <label for="htmlEditor">HTML</label>
       <textarea id="htmlEditor"></textarea>
     </div>
-    <div class="editor-section">
+    <div class="editor-section" id="cssEditorSection">
       <label for="cssEditor">CSS</label>
       <textarea id="cssEditor"></textarea>
     </div>
-    <div class="editor-section">
+    <div class="editor-section" id="jsEditorSection">
       <label for="jsEditor">JavaScript</label>
       <textarea id="jsEditor"></textarea>
     </div>
   </div>
 
+  <!-- Botón para ejecutar código -->
   <div class="output">
     <button id="runBtn">Executar Codi</button>
     <iframe id="output"></iframe>
