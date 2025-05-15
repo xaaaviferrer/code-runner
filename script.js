@@ -1,6 +1,7 @@
 let htmlEditor, cssEditor, jsEditor;
 
 window.onload = function () {
+  // Inicializar los editores de CodeMirror
   htmlEditor = CodeMirror.fromTextArea(document.getElementById("htmlEditor"), {
     mode: "xml",
     lineNumbers: true,
@@ -19,9 +20,37 @@ window.onload = function () {
     theme: "default"
   });
 
+  // Mostrar solo el editor HTML por defecto
+  showEditor('html');
+
+  // Configurar los botones para cambiar entre lenguajes
+  const buttons = document.querySelectorAll('.language-buttons button');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const lang = button.getAttribute('data-lang');
+      showEditor(lang);
+    });
+  });
+
+  // Configurar el botón de ejecutar código
   document.getElementById("runBtn").addEventListener("click", runCode);
 };
 
+// Función para mostrar solo el editor seleccionado
+function showEditor(lang) {
+  const sections = document.querySelectorAll('.editor-section');
+  sections.forEach(section => section.classList.remove('active'));
+
+  if (lang === 'html') {
+    document.getElementById('htmlEditorSection').classList.add('active');
+  } else if (lang === 'css') {
+    document.getElementById('cssEditorSection').classList.add('active');
+  } else if (lang === 'js') {
+    document.getElementById('jsEditorSection').classList.add('active');
+  }
+}
+
+// Función para ejecutar el código
 function runCode() {
   const html = htmlEditor.getValue();
   const css = cssEditor.getValue();
