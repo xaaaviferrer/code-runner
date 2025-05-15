@@ -1,48 +1,62 @@
-/* Ajustes para hacer el editor más grande */
-.editor {
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 20px;
+  height: 100vh;
 }
 
-.editor-section {
-  display: none; /* Ocultar por defecto */
-  width: 80%;
-  margin-bottom: 20px;
-}
-
-.editor-section.active {
-  display: block; /* Mostrar solo el editor activo */
-}
-
-textarea {
-  width: 100%;
-  height: 400px; /* Hacer el área más grande */
-  font-size: 16px;
-}
-
-.language-buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.language-buttons button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* Estilo para el botón de ejecutar código */
-.output {
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
   text-align: center;
 }
 
+.editor {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.editor-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-section label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.CodeMirror {
+  height: 200px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.output {
+  padding: 10px;
+}
+
 #runBtn {
-  margin-top: 20px;
-  padding: 10px 20px;
+  padding: 10px;
   font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
   cursor: pointer;
 }
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-top: 2px solid #333;
+  margin-top: 10px;
+}
+
