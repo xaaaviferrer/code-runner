@@ -16,15 +16,16 @@ let htmlEditor, cssEditor, jsEditor;
       });
     });
 
-    function showTab(tab) {
-      Object.keys(editors).forEach(key => {
-        editors[key].getWrapperElement().classList.add('hidden');
-      });
-      editors[tab].getWrapperElement().classList.remove('hidden');
+function showTab(tab) {
+  Object.keys(editors).forEach(key => {
+    const wrapper = editors[key].getWrapperElement();
+    wrapper.classList.toggle('hidden', key !== tab);
+  });
 
-      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`.tab-button[onclick*="${tab}"]`).classList.add('active');
-    }
+  document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+  document.querySelector(`.tab-button[onclick*="${tab}"]`).classList.add('active');
+}
+
 
     function runCode() {
       const html = editors['html'].getValue();
