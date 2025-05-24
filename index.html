@@ -2,34 +2,28 @@
 <html lang="ca">
 <head>
   <meta charset="UTF-8">
-  <title>Editor HTML/CSS/JS</title>
+  <title> Code Runner</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Editor HTML + CSS + JavaScript</h1>
-  </header>
+  <header> Code Runner</header>
 
-  <div class="editor">
-    <div class="editor-section">
-      <label for="htmlEditor">HTML</label>
-      <textarea id="htmlEditor"></textarea>
-    </div>
-    <div class="editor-section">
-      <label for="cssEditor">CSS</label>
-      <textarea id="cssEditor"></textarea>
-    </div>
-    <div class="editor-section">
-      <label for="jsEditor">JavaScript</label>
-      <textarea id="jsEditor"></textarea>
-    </div>
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('html')">HTML</button>
+    <button class="tab-button" onclick="showTab('css')">CSS</button>
+    <button class="tab-button" onclick="showTab('js')">JavaScript</button>
   </div>
 
-  <div class="output">
-    <button id="runBtn">Run</button>
-    <iframe id="output"></iframe>
+  <h2>CODE EDITOR</h2>
+  <div class="editor-container">
+    <textarea id="html" class="code-tab"></textarea>
+    <textarea id="css" class="code-tab hidden"></textarea>
+    <textarea id="js" class="code-tab hidden"></textarea>
   </div>
+
+  <button id="run-button" onclick="runCode()">▶ Run</button>
+  <iframe id="preview"></iframe>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
