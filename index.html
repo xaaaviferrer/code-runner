@@ -10,16 +10,18 @@
   <header> Code Runner</header>
 
   <div class="tabs">
-    <button class="tab-button active" onclick="showTab('html')">HTML</button>
-    <button class="tab-button" onclick="showTab('css')">CSS</button>
-    <button class="tab-button" onclick="showTab('js')">JavaScript</button>
+    <button class="tab-button" data-tab="html" onclick="showTab('html')">HTML</button>
+   <button class="tab-button" data-tab="css" onclick="showTab('css')">CSS</button>
+   <button class="tab-button" data-tab="js" onclick="showTab('js')">JavaScript</button>
+
   </div>
 
   <h2>CODE EDITOR</h2>
   <div class="editor-container">
-    <textarea id="html" class="code-tab"></textarea>
-    <textarea id="css" class="code-tab hidden"></textarea>
-    <textarea id="js" class="code-tab hidden"></textarea>
+   <textarea id="html" class="code-tab"></textarea>
+   <textarea id="css" class="code-tab hidden"></textarea>
+   <textarea id="js" class="code-tab hidden"></textarea>
+
   </div>
 
   <button id="run-button" onclick="runCode()">▶ Run</button>
